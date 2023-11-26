@@ -1,0 +1,37 @@
+cd c:/
+cd xampp/phpmyadmin/bin
+mysql -h superdbresource.mysql.database.azure.com -u grimaim -p
+
+SHOW DATABASES;
+
+CREATE TABLE Member (
+  id_member INT AUTO_INCREMENT PRIMARY KEY,
+  nim VARCHAR(10) NOT NULL,
+  nama VARCHAR(255) NOT NULL,
+  kelas VARCHAR(50) NOT NULL,
+  angkatan INT NOT NULL,
+  email VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Quotes (
+  id_quotes INT AUTO_INCREMENT PRIMARY KEY,
+  author VARCHAR(255) NOT NULL,
+  quotes TEXT NOT NULL,
+  waktu TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO Member (nim, nama, kelas, angkatan, email)
+VALUES
+  ('21.83.0643', 'Muhammad Rahim', 'TEKNIK KOMPUTER 01', 2021, 'muhammadrahim@students.amikom.ac.id'),
+  ('21.83.0632', 'Paul Dava Nando', 'TEKNIK KOMPUTER 01', 2021, 'nandonando@students.amikom.ac.id'),
+  ('21.83.0634', 'Roiyan Saputra', 'TEKNIK KOMPUTER 01', 2021, 'royyansaputra@students.amikom.ac.id'),
+  ('21.83.0641', 'Muhammad Reza', 'TEKNIK KOMPUTER 01', 2021, 'mhmd.reza@students.amikom.ac.id');
+
+
+INSERT INTO Quotes (author, quotes)
+VALUES
+('Author 1', 'Quote 1'),
+('Author 2', 'Quote 2'),
+('Author 3', 'Quote 3');
+
+
